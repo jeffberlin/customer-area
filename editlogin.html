@@ -15,6 +15,72 @@
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css-2/menuSidebar.css">
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css-2/footer.css">
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css-2/responsive.css">
+    <script language="javascript" type="text/javascript" src="https://secure.bmtmicro.com/Templates/util.js"></script>
+    <style media="screen" type="text/css">
+      .content-box {
+        padding: 1rem;
+      }
+    </style>
+    <script language="javascript" type="text/javascript">
+      <!--
+      function getCookieValue (name) {
+        if (document.cookie.length != 0) {
+          var begin = document.cookie.indexOf (name + '=');
+          if (begin != -1) {
+            begin += name.length + 1;
+            var end = document.cookie.indexOf (';', begin);
+            if (end == -1) {
+              end = document.cookie.length;
+            }
+            return (unescape (document.cookie.substring (begin, end)));
+          }
+        }
+        return (null);
+      }
+
+      function whichCustomer (form) {
+        var customer = getCookieValue ("BMTMicro.Customers.AccountID");
+        if (customer != null) {
+          document.write("<input type='hidden'  name='ACCOUNTID' value=" + customer + " />" + customer );
+        } else {
+          document.write("Please <a href='https://customers-new.bmtmicro.com/'>login</a> to edit your account!");
+          return (false);
+        }
+      }
+
+      function processCustomer (form) {
+        // Important: We need to use hidden fields to submit checkbox values, as the servlets will use default values if the
+        // field is not present. (An unchecked checkbox constitutes a non-existent field).
+        if ((form.LOGINNAME.value.indexOf (",") != -1) || (form.LOGINNAME.value.indexOf (" ") != -1)) {
+          alert("The login name must not contain a space or a comma!");
+          form.LOGINNAME.focus ();
+          return (false);
+        }
+        if (!isValidEmail (form.ACCOUNTEMAIL.value)) {
+          alert ("You must provide a VALID e-mail address!");
+          form.ACCOUNTEMAIL.focus ();
+          return (false);
+        }
+        if (form.PASSWORD.value.length < 4) {
+          alert ("The password must be at least 4 characters");
+          form.PASSWORD.value = "";
+          form.CONFIRMPASS.value = "";
+          form.PASSWORD.focus ();
+          return (false);
+        }
+        if (form.PASSWORD.value != form.CONFIRMPASS.value) {
+          alert ("Password does not match");
+          form.PASSWORD.value = "";
+          form.CONFIRMPASS.value = "";
+          form.PASSWORD.focus ();
+          return (false);
+        }
+
+        form.submit ();
+        return (true);
+      }
+      //-->
+    </script>
   </head>
   <body>
     <!-- Blue background -->
@@ -60,9 +126,45 @@
               </aside>
             </div> <!-- /.col-lg-2 -->
             <div class="col-lg-10 col-md-12 page-title">
-              <h4>Welcome to the Customer Area</h4>
-              <p>Here you will be able to look up previous purchases, update your login information, manage subscription purchases and check available Credits.</p>
-              <p>If you have any questions, please contact <a href="mailto:webmaster@bmtmicro.com">webmaster@bmtmicro.com</a>.</p>
+              <h4>Account Login Info</h4>
+              <div class="content-box">
+                <form name="AccountForm" method="post" action="https://customers-new.bmtmicro.com/servlets/Customers.Account">
+                  <input type="hidden" name="ACTION" value="11" />
+                  <span>
+                    <label style="margin-bottom: 1rem;">Account ID:&nbsp;</label>
+                    <script type="text/javascript" language="javascript">
+                      <!--
+                      whichCustomer (document.forms[0]);
+                      //-->
+                    </script>
+                  </span>
+                  <br>
+                  <span>
+                    <label>Email:&nbsp;</label>
+                    <input name="ACCOUNTEMAIL" value="##ACCOUNTEMAIL##" size="35" maxlength="50" style="margin-bottom: 1rem;" />
+                  </span>
+                  <br>
+                  <span>
+                    <label>Login:&nbsp;</label>
+                    <input name="LOGINNAME" value="##LOGINNAME##" maxlength="50" size="35" style="margin-bottom: 1rem;" />
+                  </span>
+                  <br>
+                  <span>
+                    <label>Password:&nbsp;</label>
+                    <input type="password" name="PASSWORD" value="##PASSWORD##" maxlength="20" size="35" style="margin-bottom: 1rem;" autocomplete="off" />
+                  </span>
+                  <br>
+                  <span>
+                    <label>Re-type Password:&nbsp;</label>
+                    <input type="password" name="CONFIRMPASS" value="##PASSWORD##" maxlength="20" size="35" style="margin-bottom: 2rem;" autocomplete="off" />
+                  </span>
+                  <br>
+                  <input type="hidden" name="PAGE" value="https://customers-new.bmtmicro.com/editloginstart.html" />
+                  <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/editloginsuccess.html" />
+                  <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/editloginerror.html" />
+                  <input type="button" name="EDITCUSTOMER" value="Submit Changes" onclick="processCustomer (form)" class="light-btn" />
+                </form>
+              </div> <!-- /.content-box -->
             </div> <!-- /.col-lg-10 col-md-12 page-title -->
           </div> <!-- /.row justify-content-start -->
         </article>

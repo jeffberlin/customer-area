@@ -117,7 +117,7 @@ select:hover {
 
 .page-title h4,
 .page-title p,
-h5, input, textarea, .light-btn, .grey-btn, input::placeholder {
+h5, input, textarea, .light-btn, .grey-btn, input::placeholder, label {
   letter-spacing: .5px;
   }
 
