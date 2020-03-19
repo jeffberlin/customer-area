@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html lang="en">
   <head>
     <meta http-equiv="Pragma" content="no-cache">
@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css-2/menuSidebar.css">
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css-2/footer.css">
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css-2/responsive.css">
+    <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css-2/table.css">
     <script language="javascript" type="text/javascript" src="https://secure.bmtmicro.com/Templates/util.js"></script>
+    <script language="javascript" type="text/javascript" src="https://customers-new.bmtmicro.com/js/dynamicOptionsList.js"></script>
     <style media="screen" type="text/css">
       .content-box {
         padding: 1rem;
@@ -23,6 +25,20 @@
     </style>
     <script language="javascript" type="text/javascript">
       <!--
+      function process(form) {
+        if (form.EMAIL.value == "") {
+          alert('You must input an Email Address');
+          form.EMAIL.focus();
+          return false;
+        }
+        if (!isValidEmail (form.EMAIL.value)) {
+          alert ("You must provide a VALID email address!");
+          form.EMAIL.focus ();
+          return (false);
+        }
+        return (true);
+      }
+
       function getCookieValue (name) {
         if (document.cookie.length != 0) {
           var begin = document.cookie.indexOf (name + '=');
@@ -38,51 +54,18 @@
         return (null);
       }
 
-      function whichCustomer (form) {
+      function submitButton (form) {
         var customer = getCookieValue ("BMTMicro.Customers.AccountID");
         if (customer != null) {
-          document.write("<input type='hidden'  name='ACCOUNTID' value=" + customer + " />" + customer );
+          document.write("<input type='submit' value='Submit Form' name='button' class='dark' id='update' />");
         } else {
-          document.write("Please <a href='https://customers-new.bmtmicro.com/'>login</a> to edit your account!");
-          return (false);
+          document.write("Please <a href='https://customers-new.bmtmicro.com/'>login</a> to submit your support request!");
         }
       }
-
-      function processCustomer (form) {
-        // Important: We need to use hidden fields to submit checkbox values, as the servlets will use default values if the
-        // field is not present. (An unchecked checkbox constitutes a non-existent field).
-        if ((form.LOGINNAME.value.indexOf (",") != -1) || (form.LOGINNAME.value.indexOf (" ") != -1)) {
-          alert("The login name must not contain a space or a comma!");
-          form.LOGINNAME.focus ();
-          return (false);
-        }
-        if (!isValidEmail (form.ACCOUNTEMAIL.value)) {
-          alert ("You must provide a VALID e-mail address!");
-          form.ACCOUNTEMAIL.focus ();
-          return (false);
-        }
-        if (form.PASSWORD.value.length < 4) {
-          alert ("The password must be at least 4 characters");
-          form.PASSWORD.value = "";
-          form.CONFIRMPASS.value = "";
-          form.PASSWORD.focus ();
-          return (false);
-        }
-        if (form.PASSWORD.value != form.CONFIRMPASS.value) {
-          alert ("Password does not match");
-          form.PASSWORD.value = "";
-          form.CONFIRMPASS.value = "";
-          form.PASSWORD.focus ();
-          return (false);
-        }
-
-        form.submit ();
-        return (true);
-      }
-      //-->
+      // -->
     </script>
   </head>
-  <body>
+  <body onload="initDynamicOptionLists()">
     <!-- Blue background -->
     <div class="blue-bg"></div>
 
@@ -98,7 +81,7 @@
                   <a class="sidebar-group" href="https://customers-new.bmtmicro.com/mainstart.html">Home</a>
                 </div> <!-- /.home-nav -->
                 <div class="home-nav">
-                  <a class="sidebar-group" href="https://customers-new.bmtmicro.com/editloginstart.html" style="color: #efa900;">My Account</a>
+                  <a class="sidebar-group" href="https://customers-new.bmtmicro.com/editloginstart.html">My Account</a>
                 </div> <!-- /.home-nav -->
                 <div class="dropright">
                   <a class="dropdown-toggle sidebar-group" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Info</a>
@@ -118,7 +101,7 @@
                   </div> <!-- /.dropdown-menu dropdown-menu-right sidebar-options -->
                 </div> <!-- /.dropright -->
                 <div class="home-nav">
-                  <a class="sidebar-group" href="https://customers-new.bmtmicro.com/contactstart.html">Contact</a>
+                  <a class="sidebar-group" href="https://customers-new.bmtmicro.com/contactstart.html" style="color: #efa900;">Contact</a>
                 </div> <!-- /.home-nav -->
                 <div class="home-nav">
                   <a class="sidebar-group" href="https://customers-new.bmtmicro.com/logout.html">Log Out</a>
@@ -126,43 +109,83 @@
               </aside>
             </div> <!-- /.col-lg-2 -->
             <div class="col-lg-10 col-md-12 page-title">
-              <h4>Account Login Info</h4>
+              <h4>Customer Support Request Form</h4>
               <div class="content-box">
-                <form name="AccountForm" method="post" action="https://customers-new.bmtmicro.com/servlets/Customers.Account">
-                  <input type="hidden" name="ACTION" value="11" />
+                <form name="form1" method="post" action="https://vendors.bmtmicro.com/servlets/System.EMailTemplate" onsubmit="return process (form1);">
+                  <input type="hidden" name="RECIPIENT" value="mdaemon@bmtmicro.com" />
+                  <input type="hidden" name="SUBJECT" value="BMT Micro Customer Support Request" />
+                  <input type="hidden" name="EMAILTEMPLATE" value="https://customers-new.bmtmicro.com/contactemail.txt" />
+                  <input type="hidden" name="REDIRECT" value="0" />
+                  <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/contactsuccess.html" />
+                  <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/error.html" />
+                  <input type="hidden" name="ACCOUNTID" value="##ACCOUNTID##" />
+                  <input type="hidden" name="ACCOUNTEMAIL" value="##ACCOUNTEMAIL##" />
+                  <script id="options">
+                    <!--
+                    var requestTitle = new DynamicOptionList();
+                    requestTitle.addDependentFields("TITLE","SUBTITLE");
+                    requestTitle.forValue("General").addOptions("Request Developer Contact Information","Billing Question","Problem During Purchase","VAT","BMT Download Problems","Feature Suggestion","Customer Comments");
+                    requestTitle.forValue("Order Information").addOptions("Cannot Find Order","How can I change my payment method?","Can I see outstadning PayPal orders?","When was this item shipped?","Why did my password expire?","Why am I paying BMT Micro?");
+                    requestTitle.forValue("Your Information").addOptions("Update Billing Address","Update Email Address","Change Password");
+                    requestTitle.forValue("Your Payment Information").addOptions("Change Payment Method","Update Credit Card Number","Update PayPal Address","Update Debit Card");
+                    requestTitle.forValue("Subscription Management").addOptions("Buy Additional Subscriptions","Review Terms of Subscription","Check Available SmurfTickets","Cancel Subscription");
+                    requestTitle.forValue("Other").addOptions("Please specify below...");
+                    requestTitle.forValue("General").setDefaultOptions("Problem with Product Received");
+                    requestTitle.forValue("Orders").setDefaultOptions("Resend Order Information");
+                    requestTitle.forValue("Account Management").setDefaultOptions("Help Updating Account");
+                    requestTitle.forValue("Other").setDefaultOptions("Please specify below...");
+                    requestTitle.selectFirstOption = false;
+                    //-->
+                  </script>
                   <span>
-                    <label style="margin-bottom: 1rem;">Account ID:&nbsp;</label>
+                    <label>Your Name:&nbsp;</label>
+                    <input type="text" name="NAME" size="25" value="" style="margin-bottom: 1rem;" />
+                  </span>
+                  <br>
+                  <span>
+                    <label>Your Email:&nbsp;</label>
+                    <input type="text" name="EMAIL" size="25" value="" style="margin-bottom: 1rem;" />
+                  </span>
+                  <br>
+                  <span>
+                    <label>Subject:&nbsp;</label>
+                    <select name="TITLE" style="margin-bottom: 1rem;">
+                      <option value="General" selected="selected">General</option>
+                      <option value="Order Information">Order Information</option>
+                      <option value="Your Information">Your Information</option>
+                      <option value="Your Payment Method">Your Payment Method</option>
+                      <option value="Subscription Management">Subscription Management</option>
+                      <option value="Other">Other...</option>
+                    </select>
+                    <br>
+                    More Specific:
+                    <select name="SUBTITLE" value="" style="margin-bottom: 1rem;">
+                      <script>requestTitle.printOptions("SUBTITLE")</script>
+                    </select>
+                  </span>
+                  <br>
+                  <span>
+                    <label>Other:&nbsp;</label>
+                    <input type="text" name="OTHERSUBJECT" value="" size="25" style="margin-bottom: 1rem;" />
+                  </span>
+                  <br>
+                  <span>
+                    <label>Website you ordered from:&nbsp;</label>
+                    <input type="text" name="URL" size="25" value="http://" style="margin-bottom: 1rem;" />
+                  </span>
+                  <br>
+                  <span>
+                    <label style="margin-bottom: .2rem;">Question/Comment:&nbsp;</label>
+                    <br>
+                    <textarea name="DESCRIPTION" rows="8" cols="75" style="margin-bottom: 2rem;"></textarea>
+                  </span>
+                  <br>
+                  <input type="reset" value="Clear Form" name="reset" class="light-btn" />
                     <script type="text/javascript" language="javascript">
                       <!--
-                      whichCustomer (document.forms[0]);
+                      submitButton (document.forms[0]);
                       //-->
                     </script>
-                  </span>
-                  <br>
-                  <span>
-                    <label>Email:&nbsp;</label>
-                    <input name="ACCOUNTEMAIL" value="##ACCOUNTEMAIL##" size="35" maxlength="50" style="margin-bottom: 1rem;" />
-                  </span>
-                  <br>
-                  <span>
-                    <label>Login:&nbsp;</label>
-                    <input name="LOGINNAME" value="##LOGINNAME##" maxlength="50" size="35" style="margin-bottom: 1rem;" />
-                  </span>
-                  <br>
-                  <span>
-                    <label>Password:&nbsp;</label>
-                    <input type="password" name="PASSWORD" value="##PASSWORD##" maxlength="20" size="35" style="margin-bottom: 1rem;" autocomplete="off" />
-                  </span>
-                  <br>
-                  <span>
-                    <label>Re-type Password:&nbsp;</label>
-                    <input type="password" name="CONFIRMPASS" value="##PASSWORD##" maxlength="20" size="35" style="margin-bottom: 2rem;" autocomplete="off" />
-                  </span>
-                  <br>
-                  <input type="hidden" name="PAGE" value="https://customers-new.bmtmicro.com/editloginstart.html" />
-                  <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/editloginsuccess.html" />
-                  <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/editloginerror.html" />
-                  <input type="button" name="EDITCUSTOMER" value="Submit Changes" onclick="processCustomer (form)" class="light-btn" />
                 </form>
               </div> <!-- /.content-box -->
             </div> <!-- /.col-lg-10 col-md-12 page-title -->
