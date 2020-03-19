@@ -57,7 +57,7 @@
       function submitButton (form) {
         var customer = getCookieValue ("BMTMicro.Customers.AccountID");
         if (customer != null) {
-          document.write("<input type='submit' value='Submit Form' name='button' class='dark' id='update' />");
+          document.write("<input type='submit' value='Submit Form' name='button' class='light-btn' id='update' />");
         } else {
           document.write("Please <a href='https://customers-new.bmtmicro.com/'>login</a> to submit your support request!");
         }
@@ -180,12 +180,13 @@
                     <textarea name="DESCRIPTION" rows="8" cols="75" style="margin-bottom: 2rem;"></textarea>
                   </span>
                   <br>
-                  <input type="reset" value="Clear Form" name="reset" class="light-btn" />
-                    <script type="text/javascript" language="javascript">
-                      <!--
-                      submitButton (document.forms[0]);
-                      //-->
-                    </script>
+                  <input type="reset" value="Clear Form" name="reset" class="light-btn" style="margin-right: .5rem;" />
+                  <script type="text/javascript" language="javascript">
+                    <!--
+                    submitButton (document.forms[0]);
+                    //-->
+                  </script>
+                  <noscript>JavaScript is required!</noscript>
                 </form>
               </div> <!-- /.content-box -->
             </div> <!-- /.col-lg-10 col-md-12 page-title -->
