@@ -5,13 +5,8 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
     <title>BMT Micro Customers Center</title>
-    <%@ include file="includes/bootstrap_top_script.html" %>
+    <%@ include file="/includes/bootstrap_top_script.html" %>
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css/style.css"/>
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css/login.css"/>
     <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css/responsive.css"/>
@@ -22,7 +17,7 @@
     </style>
   </head>
   <body>
-    <div class="container-fluid" style="height: calc(100vh - 350px);">
+    <div class="container-fluid">
       <div class="main"></div>
       <div class="content-area">
         <div class="row text-center justify-content-center" style="margin-bottom: 20px;">
@@ -34,25 +29,11 @@
         <div class="row justify-content-center">
           <div class="box-style">
             <div class="customer-login-box" style="background-color: rgba(255, 255, 255, 0.3);">
-              <form action="https://customers-new.bmtmicro.com/servlets/Customers.Login" method="post">
-                <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/main.jsp">
-                <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/login-error.jsp">
-                <h4 class="text-center">Customer Log In</h4>
-                <div class="username">
-                  <label>Login:</label>
-                  <input class="customer-input" id="LOGINNAME" name="LOGINNAME" value="" maxlength="50" autocomplete="off" />
-                </div> <!-- /.username -->
-                <div class="password">
-                  <label>Password:</label>
-                  <input class="customer-input" id="PASSWORD" name="PASSWORD" type="password" value="" maxlength="50" autocomplete="off" />
-                </div> <!-- /.password -->
-                <div class="forgot-password">
-                  <a href="https://customers-new.bmtmicro.com/login-lost-password.jsp">Forgot Password?</a>
-                </div> <!-- /.forgot-password -->
-                <div class="login-btn text-center" style="margin-bottom: 10px;">
-                  <button type="submit" value="Login" autocomplete="off">Login</button>
-                </div> <!-- /.login-btn text-center -->
-              </form>
+              <h4 class="text-center">Error Logging In</h4>
+              <p>We are unable to complete your request at this time. Please check your Login Name or Email to see if it is correct.</p>
+              <p>Please note: If we do not have an email address on file for you, this form will not work.</p>
+              <p>Please request your password from <a href="mailto:webassist@bmtmicro.com">webassist@bmtmicro.com</a>.</p>
+              <p style="font-size: .9rem;">If all information was correct and you still have received this error page, the system may be temporarily unavailable. Please wait 60 minutes and <a href="https://customers-new.bmtmicro.com/">try again</a>.</p>
             </div> <!-- /.customer-login-box -->
           </div> <!-- /.box-style -->
         </div> <!-- /.row justify-content-center -->
@@ -65,6 +46,6 @@
         </div> <!-- /.bottom-footer-content row text-center align-items-center -->
       </footer>
     </div> <!-- /.container-fluid -->
-    <%@ include file="includes/bootstrap_bottom_scripts.html" %>
+    <%@ include file="/includes/bootstrap_bottom_scripts.html" %>
   </body>
 </html>
