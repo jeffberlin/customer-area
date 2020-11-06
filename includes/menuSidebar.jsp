@@ -11,17 +11,17 @@
     <div class="dropright">
       <a class="dropdown-toggle sidebar-group" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Info</a>
       <div class="dropdown-menu dropdown-menu-right text-center sidebar-options" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="https://customers-new.bmtmicro.com/faqsstart.html">FAQs</a>
-        <a class="dropdown-item" href="https://customers-new.bmtmicro.com/privacystatementstart.html">Privacy Policy</a>
+        <a class="dropdown-item" href="https://customers-new.bmtmicro.com/info-faqs.jsp">FAQs</a>
+        <a class="dropdown-item" href="https://customers-new.bmtmicro.com/info-privacy-statement.jsp">Privacy Policy</a>
       </div> <!-- /.dropdown-menu dropdown-menu-right sidebar-options -->
     </div> <!-- /.dropright -->
     <div class="home-nav">
-      <a class="sidebar-group" href="https://customers-new.bmtmicro.com/orderliststart.html">Your Orders</a>
+      <a class="sidebar-group" href="https://customers-new.bmtmicro.com/orders.jsp">Your Orders</a>
     </div> <!-- /.home-nav -->
     <div class="dropright">
       <a class="dropdown-toggle sidebar-group" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Subscriptions</a>
       <div class="dropdown-menu dropdown-menu-right text-center sidebar-options" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="https://customers-new.bmtmicro.com/subscriptionsstart.html">Your Subscriptions</a>
+        <a class="dropdown-item" href="https://customers-new.bmtmicro.com/subscriptions-table.jsp">Your Subscriptions</a>
         <a class="dropdown-item" href="https://customers-new.bmtmicro.com/creditsstart.html">Your Credits</a>
       </div> <!-- /.dropdown-menu dropdown-menu-right sidebar-options -->
     </div> <!-- /.dropright -->

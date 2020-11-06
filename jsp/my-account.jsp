@@ -92,7 +92,6 @@
               <div class="content-box">
                 <form name="AccountForm" method="post" action="https://customers-new.bmtmicro.com/servlets/Customers.Account">
                   <input type="hidden" name="ACTION" value="11" />
-                  <!-- <input type="hidden" name="PAGE" value="https://customers-new.bmtmicro.com/editloginstart.html" /> -->
                   <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/editloginsuccess.html" />
                   <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/editloginerror.html" />
                   <span>
@@ -122,7 +121,6 @@
                     <input type="password" name="CONFIRMPASS" value="${requestScope.PASSWORD}" maxlength="20" size="35" style="margin-bottom: 2rem;" autocomplete="off" />
                   </span>
                   <br>
-                  <!--<input type="button" name="EDITCUSTOMER" value="Submit Changes" onclick="processCustomer (form)" class="light-btn" />-->
                   <button type="button" name="EDITCUSTOMER" onclick="processCustomer (form)" class="save-btn">Submit</button>
                 </form>
               </div> <!-- /.content-box -->
