@@ -54,7 +54,7 @@
       function submitButton (form) {
         var customer = getCookieValue ("BMTMicro.Customers.AccountID");
         if (customer != null) {
-          document.write("<input type='submit' value='Submit Form' name='button' class='save-btn' id='update' />");
+          document.write("<input type='submit' value='Submit' name='button' class='save-btn' id='update' />");
         } else {
           document.write("Please <a href='https://customers-new.bmtmicro.com/'>login</a> to submit your support request!");
         }
@@ -74,7 +74,7 @@
             <div class="col-lg-10 col-md-12 page-title">
               <h4>Customer Support Request Form</h4>
               <div class="content-box overflow-auto">
-                <form name="form1" method="post" action="https://vendors.bmtmicro.com/servlets/System.EMailTemplate" onsubmit="return process (form1);">
+                <form name="form1" method="post" action="https://vendors.bmtmicro.com/servlets/System.EMailTemplate" onsubmit="return process (form1);" style="margin-bottom: 0;">
                   <input type="hidden" name="RECIPIENT" value="mdaemon@bmtmicro.com" />
                   <input type="hidden" name="SUBJECT" value="BMT Micro Customer Support Request" />
                   <input type="hidden" name="EMAILTEMPLATE" value="https://customers-new.bmtmicro.com/contactemail.txt" />
@@ -132,7 +132,7 @@
                   <br>
                   <span>
                     <label>Website you ordered from:&nbsp;</label>
-                    <input type="text" name="URL" size="25" value="http://" style="margin-bottom: 1rem;" />
+                    <input type="text" name="URL" size="35" value="http://" style="margin-bottom: 1rem;" />
                   </span>
                   <br>
                   <span>
@@ -141,7 +141,7 @@
                     <textarea name="DESCRIPTION" rows="8" cols="75" style="margin-bottom: 2rem;"></textarea>
                   </span>
                   <br>
-                  <input type="reset" value="Clear Form" name="reset" class="save-btn" style="margin-right: .5rem;" />
+                  <input type="reset" value="Clear" name="reset" class="save-btn" style="margin-right: .5rem;" />
                   <script>
                     submitButton (document.forms[0]);
                   </script>
