@@ -25,7 +25,6 @@
           <div class="box-style">
             <div class="customer-login-box" style="background-color: rgba(255, 255, 255, 0.3);">
               <h4 class="text-center">Your login and password are invalid.</h4>
-              <p>Your password has been successfully set to the new password provided.</p>
               <p>You may want to <a href="https://customers-new.bmtmicro.com/">try again</a>.</p>
             </div> <!-- /.customer-login-box -->
           </div> <!-- /.box-style -->

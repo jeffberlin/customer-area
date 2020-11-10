@@ -8,6 +8,11 @@ html, body {
   margin: 0px;
   }
 
+form {
+  margin: 0 !important;
+  margin-block-end: 0em !important;
+}
+
 input, button:focus, textarea, select, select:focus {
   outline: none !important;
   }
