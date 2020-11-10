@@ -18,13 +18,16 @@
     <div class="home-nav">
       <a class="sidebar-group" href="https://customers-new.bmtmicro.com/orders.jsp">Your Orders</a>
     </div> <!-- /.home-nav -->
-    <div class="dropright">
+    <div class="home-nav">
+      <a class="sidebar-group" href="https://customers-new.bmtmicro.com/subscriptions.jsp">Your Subscriptions</a>
+    </div>
+    <!-- <div class="dropright">
       <a class="dropdown-toggle sidebar-group" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Subscriptions</a>
       <div class="dropdown-menu dropdown-menu-right text-center sidebar-options" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="https://customers-new.bmtmicro.com/subscriptions-table.jsp">Your Subscriptions</a>
+        <a class="dropdown-item" href="https://customers-new.bmtmicro.com/subscriptions.jsp">Your Subscriptions</a>
         <a class="dropdown-item" href="https://customers-new.bmtmicro.com/subscriptions-credits.jsp">Your Credits</a>
-      </div> <!-- /.dropdown-menu dropdown-menu-right sidebar-options -->
-    </div> <!-- /.dropright -->
+      </div> --><!-- /.dropdown-menu dropdown-menu-right sidebar-options --><!--
+    </div> --> <!-- /.dropright -->
     <div class="home-nav">
       <a class="sidebar-group" href="https://customers-new.bmtmicro.com/contact.jsp">Contact</a>
     </div> <!-- /.home-nav -->

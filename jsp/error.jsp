@@ -13,6 +13,7 @@
     <title>BMT Micro Customers Subscriptions - Error!</title>
     <%@ include file="/includes/bootstrap_top_script.html" %>
     <%@ include file="/includes/style_menu_footer.html" %>
+    <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css/addPages.css"/>
     <script src="https://secure.bmtmicro.com/Templates/util.js"></script>
   </head>
   <body>
