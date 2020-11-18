@@ -47,7 +47,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      ${requestScope.TABLEDATA}
+                      <c:forEach var="row" items="${requestScope.TABLEDATA}">
+                        <tr>
+                          <td align="center">${row.PRODUCTNAME}</td>
+                          <td align="center">${row.EXPIRATIONDATE}</td>
+                        </tr>
+                      </c:forEach>
                     </tbody>
                     <tfoot>
                       <tr class="table-total">

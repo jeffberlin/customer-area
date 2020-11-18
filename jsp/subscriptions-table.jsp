@@ -32,7 +32,16 @@
         </tr>
       </thead>
       <tbody>
-        ${requestScope.TABLEDATA}
+        <c:forEach var="row" items="${requestScope.TABLEDATA}">
+          <tr>
+            <td align="center">${row.PRODUCTNAME}</td>
+            <td align="center">${row.PRICE}</td>
+            <td align="center">${row.EFFECTIVEDATE}</td>
+            <td align="center"><c:if test="${empty row.EXPIRATIONDATE}">Active</c:if>${row.EXPIRATIONDATE}</td>
+            <td align="center">${row.NEXTBILLINGDATE}</td>
+            <td align="center"><c:if test="${empty row.EXPIRATIONDATE}"><input type="button" <c:if test="${row.ALLOWCANCEL!=0}">value="Cancel"</c:if><c:if test="${row.ALLOWCANCEL==0}">value="Request Change"</c:if> onclick="cancelSubscription(${row.SUBSCRIPTIONID},${row.ALLOWCANCEL})" /></c:if><c:if test="${!empty row.EXPIRATIONDATE}">Cancelled</c:if></td>
+          </tr>
+        </c:forEach>
       </tbody>
       <tfoot>
         <tr class="table-total">

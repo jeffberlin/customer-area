@@ -24,7 +24,15 @@
       </tr>
     </thead>
     <tbody>
-      ${requestScope.TABLEDATA}
+      <c:forEach var="row" items="${requestScope.TABLEDATA}">
+        <tr>
+          <td align="center">${row.ORDERID}</td>
+          <td align="center">${row.ORDERDATE}</td>
+          <td align="center">${row.QUANTITY}</td>
+          <td align="left">${row.PRODUCTNAME}</td>
+          <td align="right">${row.PRODUCTPRICE}</td>
+        </tr>
+      </c:forEach>
     </tbody>
     <tfoot>
       <tr class="table-total">
