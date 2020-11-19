@@ -1,9 +1,9 @@
 <%@ include file="/includes/core.jsp" %>
-<form name="requestcancel" action="https://customers-new.bmtmicro.com/servlets/Customers.Subscriptions" method="post" onSubmit="cancelSubscription();">
+<form name="requestcancel" action="https://customers.bmtmicro.com/servlets/Customers.Subscriptions" method="post" onSubmit="cancelSubscription();">
   <input type="hidden" name="ACTION" value="1"/>
   <input type="hidden" name="SUBSCRIPTIONID" value=""/>
-  <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/cancel-success.jsp"/>
-  <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/error.jsp"/>
+  <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/cancel-success.jsp"/>
+  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/error.jsp"/>
   <div class="table-header">
     <span>&nbsp;</span>
   </div><!-- /.table-header -->

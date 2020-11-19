@@ -13,9 +13,9 @@
     <title>BMT Micro Customers Center</title>
     <%@ include file="/includes/bootstrap_top_script.html" %>
     <%@ include file="/includes/style_menu_footer.html" %>
-    <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css/table.css"/>
+    <link rel="stylesheet" href="https://customers.bmtmicro.com/css/table.css"/>
     <script src="https://secure.bmtmicro.com/Templates/util.js"></script>
-    <script src="https://customers-new.bmtmicro.com/js/dynamicOptionsList.js"></script>
+    <script src="https://customers.bmtmicro.com/js/dynamicOptionsList.js"></script>
     <style media="screen" type="text/css">
       .content-box {
         padding: 1rem;
@@ -56,7 +56,7 @@
         if (customer != null) {
           document.write("<input type='submit' value='Submit' name='button' class='save-btn' id='update' />");
         } else {
-          document.write("Please <a href='https://customers-new.bmtmicro.com/'>login</a> to submit your support request!");
+          document.write("Please <a href='https://customers.bmtmicro.com/'>login</a> to submit your support request!");
         }
       }
     </script>
@@ -70,17 +70,17 @@
       <div class="container-fluid body-content">
         <article class="section">
           <div class="row justify-content-start">
-            <jsp:include page="includes/menuSidebar.jsp" />
+            <jsp:include page="/includes/menuSidebar.jsp" />
             <div class="col-lg-10 col-md-12 page-title">
               <h4>Customer Support Request Form</h4>
               <div class="content-box overflow-auto">
                 <form name="form1" method="post" action="https://vendors.bmtmicro.com/servlets/System.EMailTemplate" onsubmit="return process (form1);" style="margin-bottom: 0;">
                   <input type="hidden" name="RECIPIENT" value="mdaemon@bmtmicro.com" />
                   <input type="hidden" name="SUBJECT" value="BMT Micro Customer Support Request" />
-                  <input type="hidden" name="EMAILTEMPLATE" value="https://customers-new.bmtmicro.com/contactemail.txt" />
+                  <input type="hidden" name="EMAILTEMPLATE" value="https://customers.bmtmicro.com/contactemail.txt" />
                   <input type="hidden" name="REDIRECT" value="0" />
-                  <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/contact-success.jsp" />
-                  <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/error.jsp" />
+                  <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/contact-success.jsp" />
+                  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/error.jsp" />
                   <input type="hidden" name="ACCOUNTID" value="${requestScope.ACCOUNTID}" />
                   <input type="hidden" name="ACCOUNTEMAIL" value="${requestScope.ACCOUNTEMAIL}" />
                   <script id="options">
@@ -152,7 +152,7 @@
           </div> <!-- /.row justify-content-start -->
         </article>
       </div> <!-- /.container-fluid body-content -->
-      <jsp:include page="includes/footer.jsp" />
+      <jsp:include page="/includes/footer.jsp" />
     </div> <!-- /.main-raised -->
     <%@ include file="/includes/bootstrap_bottom_scripts.html" %>
   </body>

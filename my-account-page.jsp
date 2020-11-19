@@ -14,7 +14,7 @@
     <%@ include file="/includes/bootstrap_top_script.html" %>
     <%@ include file="/includes/style_menu_footer.html" %>
     <script src="https://secure.bmtmicro.com/Templates/util.js"></script>
-    <script src="https://customers-new.bmtmicro.com/js/main.js"></script>
+    <script src="https://customers.bmtmicro.com/js/main.js"></script>
     <style media="screen" type="text/css">
       .content-box {
         padding: 1rem;
@@ -41,7 +41,7 @@
         if (customer != null) {
           document.write("<input type='hidden' name='ACCOUNTID' value=" + customer + " />" + customer );
         } else {
-          document.write("Please <a href='https://customers-new.bmtmicro.com/'>login</a> to edit your account!");
+          document.write("Please <a href='https://customers.bmtmicro.com/'>login</a> to edit your account!");
           return (false);
         }
       }
@@ -87,14 +87,14 @@
       <div class="container-fluid body-content">
         <article class="section">
           <div class="row justify-content-start">
-            <jsp:include page="includes/menuSidebar.jsp" />
+            <jsp:include page="/includes/menuSidebar.jsp" />
             <div class="col-lg-10 col-md-12 page-title">
               <h4>Account Login Info</h4>
               <div class="content-box">
-                <form name="AccountForm" method="post" action="https://customers-new.bmtmicro.com/servlets/Customers.Account">
+                <form name="AccountForm" method="post" action="https://customers.bmtmicro.com/servlets/Customers.Account">
                   <input type="hidden" name="ACTION" value="11" />
-                  <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/my-account-edit-success.jsp" />
-                  <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/my-account-edit-error.jsp" />
+                  <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/my-account-edit-success.jsp" />
+                  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/my-account-edit-error.jsp" />
                   <span>
                     <label style="margin-bottom: 1rem;">Account ID:&nbsp;</label>
                     <script>
@@ -129,7 +129,7 @@
           </div> <!-- /.row justify-content-start -->
         </article>
       </div> <!-- /.container-fluid body-content -->
-      <jsp:include page="includes/footer.jsp" />
+      <jsp:include page="/includes/footer.jsp" />
     </div> <!-- /.main-raised -->
     <%@ include file="/includes/bootstrap_bottom_scripts.html" %>
   </body>

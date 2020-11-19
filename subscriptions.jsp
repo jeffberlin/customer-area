@@ -13,15 +13,15 @@
     <title>BMT Micro Customers Center</title>
     <%@ include file="/includes/bootstrap_top_script.html" %>
     <%@ include file="/includes/style_menu_footer.html" %>
-    <link rel="stylesheet" href="https://customers-new.bmtmicro.com/css/table.css"/>
+    <link rel="stylesheet" href="https://customers.bmtmicro.com/css/table.css"/>
     <script src="https://secure.bmtmicro.com/Templates/util.js"></script>
-    <script src="https://customers-new.bmtmicro.com/js/TableSort.js"></script>
-    <script src="https://customers-new.bmtmicro.com/js/main.js"></script>
+    <script src="https://customers.bmtmicro.com/js/TableSort.js"></script>
+    <script src="https://customers.bmtmicro.com/js/main.js"></script>
     <script>
       function cancelSubscription (subscriptionID, allowCancel) {
         var form = document.subscriptions;
         form.SUBSCRIPTIONID.value = subscriptionID;
-        form.NEXT_PAGE.value = allowCancel ? "https://customers-new.bmtmicro.com/cancel-success.jsp" : "https://customers-new.bmtmicro.com/request-success.jsp";
+        form.NEXT_PAGE.value = allowCancel ? "https://customers.bmtmicro.com/cancel-success.jsp" : "https://customers.bmtmicro.com/request-success.jsp";
         form.submit ();
       }
     </script>
@@ -35,13 +35,13 @@
       <div class="container-fluid body-content">
         <article class="section">
           <div class="row justify-content-start">
-            <jsp:include page="includes/menuSidebar.jsp" />
+            <jsp:include page="/includes/menuSidebar.jsp" />
             <div class="col-lg-10 col-md-12 page-title">
               <h4>Subscription Purchases</h4>
               <div class="content-box overflow-auto d-flex flex-column">
-                <form name="subscriptions" action="https://customers-new.bmtmicro.com/servlets/Customers.Subscriptions" method="post" onSubmit="cancelSubscription();">
-                  <input type="hidden" name="NEXT_PAGE" value="https://customers-new.bmtmicro.com/subscriptions-table.jsp"/>
-                  <input type="hidden" name="ERROR_PAGE" value="https://customers-new.bmtmicro.com/error.jsp"/>
+                <form name="subscriptions" action="https://customers.bmtmicro.com/servlets/Customers.Subscriptions" method="post" onSubmit="cancelSubscription();">
+                  <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/subscriptions-table.jsp"/>
+                  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/error.jsp"/>
                 </form>
                 <div name="tableframe" id="tableframe" class="overflow-auto h-100"></div> <!-- /#tableframe -->
               </div> <!-- /.content-box -->
@@ -49,7 +49,7 @@
           </div> <!-- /.row justify-content-start -->
         </article>
       </div> <!-- /.container-fluid body-content -->
-      <jsp:include page="includes/footer.jsp" />
+      <jsp:include page="/includes/footer.jsp" />
     </div> <!-- /.main-raised -->
     <%@ include file="/includes/bootstrap_bottom_scripts.html" %>
   </body>

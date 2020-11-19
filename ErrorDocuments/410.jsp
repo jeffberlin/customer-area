@@ -1,43 +1,44 @@
 <%@ include file="/includes/core.jsp" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <title>BMT Micro Customers Subscriptions - Error!</title>
+    <title>Sorry, Access Denied</title>
     <%@ include file="/includes/bootstrap_top_script.html" %>
-    <%@ include file="/includes/style_menu_footer.html" %>
-    <link rel="stylesheet" href="https://customers.bmtmicro.com/css/addPages.css"/>
-    <script src="https://secure.bmtmicro.com/Templates/util.js"></script>
+    <link rel="stylesheet" href="https://customers.bmtmicro.com/css/style.css"/>
+    <link rel="stylesheet" href="https://customers.bmtmicro.com/css/login.css"/>
+    <link rel="stylesheet" href="https://customers.bmtmicro.com/css/responsive.css"/>
   </head>
   <body>
-    <!-- Blue background -->
-    <div class="blue-bg"></div>
-
-    <!-- Start of body content -->
-    <div class="main-raised">
-      <div class="container-fluid body-content">
-        <article class="section">
-          <div class="row justify-content-start">
-            <jsp:include page="includes/menuSidebar.jsp" />
-            <div class="col-lg-10 col-md-12 page-title">
-              <h4>Error</h4>
-              <div class="content-box overflow-auto">
-                <p><strong>ATTENTION</strong></p>
-                <p>This product has been discontinued or is temporarily unavailable for purchase. Please contact the developer for more information on purchasing this product.</p>
-              </div> <!-- /.content-box -->
-            </div> <!-- /.col-lg-10 col-md-12 page-title -->
-          </div> <!-- /.row justify-content-start -->
-        </article>
-      </div> <!-- /.container-fluid body-content -->
-      <jsp:include page="includes/footer.jsp" />
-    </div> <!-- /.main-raised -->
+    <div class="container-fluid">
+      <div class="main"></div>
+      <div class="content-area">
+        <div class="row text-center justify-content-center" style="margin-bottom: 20px;">
+          <div class="col-lg-10">
+            <img src='<c:url value="https://customers.bmtmicro.com/images/bmt-micro-logo-new-min.png"></c:url>' alt="BMT Micro, Inc. logo" height="70" style="margin-bottom: 20px;">
+            <h5 style="color: #ffffff; letter-spacing: .5px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">Customer's Control Panel</h5>
+          </div> <!-- /.col-lg-10 -->
+        </div> <!-- /.row text-center justify-content-center -->
+        <div class="row justify-content-center">
+          <div class="box-style" style="max-width: 650px;">
+            <div class="customer-login-box" style="background-color: rgba(255, 255, 255, 0.3); padding: 1rem 1.5rem;">
+              <h4 class="text-center">Error</h4>
+              <p><strong>ATTENTION</strong></p>
+              <p>This product has been discontinued or is temporarily unavailable for purchase. Please contact the developer for more information on purchasing this product.</p>
+            </div> <!-- /.customer-login-box -->
+          </div> <!-- /.box-style -->
+        </div> <!-- /.row justify-content-center -->
+      </div> <!-- /.content-area -->
+      <footer class="footer container-fluid">
+        <div class="bottom-footer-content row text-center align-items-center">
+          <div class="copyright col">
+            <p>BMT Micro, Inc. Copyright &copy; 1992 - ${yearNow}</p>
+          </div> <!-- /.copyright col -->
+        </div> <!-- /.bottom-footer-content row text-center align-items-center -->
+      </footer>
+    </div> <!-- /.container-fluid -->
     <%@ include file="/includes/bootstrap_bottom_scripts.html" %>
   </body>
 </html>
