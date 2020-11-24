@@ -1,5 +1,6 @@
+<%@ page pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ include file="/includes/core.jsp" %>
-<form name="requestcancel" action="https://customers.bmtmicro.com/servlets/Customers.Subscriptions" method="post" onSubmit="cancelSubscription();">
+<form name="subscriptions" action="https://customers.bmtmicro.com/servlets/Customers.Subscriptions" method="post" onSubmit="cancelSubscription();">
   <input type="hidden" name="ACTION" value="1"/>
   <input type="hidden" name="SUBSCRIPTIONID" value=""/>
   <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/cancel-success.jsp"/>

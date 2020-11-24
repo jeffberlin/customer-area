@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ include file="/includes/core.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html lang="en">
@@ -39,11 +40,13 @@
             <div class="col-lg-10 col-md-12 page-title">
               <h4>Subscription Purchases</h4>
               <div class="content-box overflow-auto d-flex flex-column">
-                <form name="subscriptions" action="https://customers.bmtmicro.com/servlets/Customers.Subscriptions" method="post" onSubmit="cancelSubscription();">
-                  <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/subscriptions-table.jsp"/>
-                  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/error.jsp"/>
-                </form>
-                <div name="tableframe" id="tableframe" class="overflow-auto h-100"></div> <!-- /#tableframe -->
+                <div name="tableframe" id="tableframe" class="overflow-auto h-100">
+                  <c:import url="https://customers.bmtmicro.com/servlets/Customers.Subscriptions">
+                    <c:param name="SESSIONID" value="${sessionid}" />
+                    <c:param name="NEXT_PAGE" value="https://customers.bmtmicro.com/subscriptions-table.jsp"/>
+                    <c:param name="ERROR_PAGE" value="https://customers.bmtmicro.com/error.jsp"/>
+                  </c:import>
+                </div> <!-- /#tableframe -->
               </div> <!-- /.content-box -->
             </div> <!-- /.col-lg-10 col-md-12 page-title -->
           </div> <!-- /.row justify-content-start -->
@@ -53,7 +56,4 @@
     </div> <!-- /.main-raised -->
     <%@ include file="/includes/bootstrap_bottom_scripts.html" %>
   </body>
-  <script>
-    $(document).ready(function(){ submitToDiv (document.subscriptions, 'tableframe'); });
-  </script>
 </html>
