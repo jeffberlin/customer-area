@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ include file="/includes/core.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html lang="en">
@@ -80,7 +81,7 @@
                   <input type="hidden" name="EMAILTEMPLATE" value="https://customers.bmtmicro.com/contactemail.txt" />
                   <input type="hidden" name="REDIRECT" value="0" />
                   <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/contact-success.jsp" />
-                  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/error.jsp" />
+                  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/errorpage.jsp" />
                   <input type="hidden" name="ACCOUNTID" value="${requestScope.ACCOUNTID}" />
                   <input type="hidden" name="ACCOUNTEMAIL" value="${requestScope.ACCOUNTEMAIL}" />
                   <script id="options">

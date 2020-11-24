@@ -44,7 +44,7 @@
                   <c:import url="https://customers.bmtmicro.com/servlets/Customers.Subscriptions">
                     <c:param name="SESSIONID" value="${sessionid}" />
                     <c:param name="NEXT_PAGE" value="https://customers.bmtmicro.com/subscriptions-table.jsp"/>
-                    <c:param name="ERROR_PAGE" value="https://customers.bmtmicro.com/error.jsp"/>
+                    <c:param name="ERROR_PAGE" value="https://customers.bmtmicro.com/errorpage.jsp"/>
                   </c:import>
                 </div> <!-- /#tableframe -->
               </div> <!-- /.content-box -->

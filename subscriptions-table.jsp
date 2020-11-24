@@ -4,7 +4,7 @@
   <input type="hidden" name="ACTION" value="1"/>
   <input type="hidden" name="SUBSCRIPTIONID" value=""/>
   <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/cancel-success.jsp"/>
-  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/error.jsp"/>
+  <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/errorpage.jsp"/>
   <div class="table-header">
     <span>&nbsp;</span>
   </div><!-- /.table-header -->

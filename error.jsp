@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ include file="/includes/core.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html lang="en">
@@ -25,7 +26,11 @@
       <div class="container-fluid body-content">
         <article class="section">
           <div class="row justify-content-start">
-            <jsp:include page="/includes/menuSidebar.jsp" />
+            <div class="col-lg-2">
+              <aside class="sidebar" role="complementary">
+                <img src='<c:url value="https://customers.bmtmicro.com/images/bmt-micro-logo-new-min.png"></c:url>' alt="BMT Micro, Inc. logo">
+              </aside>
+            </div> <!-- /.col-lg-2 -->
             <div class="col-lg-10 col-md-12 page-title">
               <h4>Error</h4>
               <p>An error has occurred.</p>
