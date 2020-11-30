@@ -15,10 +15,10 @@
   </head>
   <body onload="document.editloginstart.submit()">
     <form name="editloginstart" method="post" action="https://customers.bmtmicro.com/servlets/Customers.Account">
-    <input type="hidden" name="ACTION" value="1" />
-    <input type="hidden" name="PAGE" value="https://customers.bmtmicro.com/my-account.jsp" />
-    <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/my-account-page.jsp" />
-    <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/my-account-edit-error.jsp" />
+      <input type="hidden" name="ACTION" value="1" />
+      <input type="hidden" name="PAGE" value="https://customers.bmtmicro.com/my-account.jsp" />
+      <input type="hidden" name="NEXT_PAGE" value="https://customers.bmtmicro.com/my-account-page.jsp" />
+      <input type="hidden" name="ERROR_PAGE" value="https://customers.bmtmicro.com/my-account-edit-error.jsp" />
     </form>
   </body>
 </html>

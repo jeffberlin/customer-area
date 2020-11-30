@@ -33,11 +33,14 @@
               <h4>Your Orders</h4>
               <div class="content-box overflow-auto d-flex flex-column">
                 <div name="tableframe" id="tableframe" class="overflow-auto h-100">
-                <c:import url="https://customers.bmtmicro.com/servlets/Customers.OrderList">
-                  <c:param name="SESSIONID" value="${sessionid}" />
-                  <c:param name="NEXT_PAGE" value="https://customers.bmtmicro.com/orders-table.jsp" />
-                  <c:param name="ERROR_PAGE" value="https://customers.bmtmicro.com/errorpage.jsp" />
-                </c:import>
+                  <c:catch var="errormsg">
+                    <c:import url="https://customers.bmtmicro.com/servlets/Customers.OrderList">
+                      <c:param name="SESSIONID" value="${sessionid}" />
+                      <c:param name="NEXT_PAGE" value="https://customers.bmtmicro.com/orders-table.jsp" />
+                      <c:param name="ERROR_PAGE" value="https://customers.bmtmicro.com/error-page.jsp" />
+                    </c:import>
+                  </c:catch>
+                  <%@ include file="/includes/catch.jsp" %>
                 </div> <!-- /#tableframe -->
               </div> <!-- /.content-box -->
             </div> <!-- /.col-lg-10 col-md-12 page-title -->
