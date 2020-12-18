@@ -34,6 +34,7 @@
           form.EMAIL.focus ();
           return (false);
         }
+        form.submit();
         return (true);
       }
 
@@ -55,7 +56,7 @@
       function submitButton (form) {
         var customer = getCookieValue ("BMTMicro.Customers.AccountID");
         if (customer != null) {
-          document.write("<input type='submit' value='Submit' name='button' class='save-btn' id='update' />");
+          document.write("<button type='button' value='Submit' class='save-btn' id='update' onclick='process (form);'>Submit</button>");
         } else {
           document.write("Please <a href='https://customers.bmtmicro.com/'>login</a> to submit your support request!");
         }
@@ -75,7 +76,7 @@
             <div class="col-lg-10 col-md-12 page-title">
               <h4>Customer Support Request Form</h4>
               <div class="content-box overflow-auto">
-                <form name="form1" method="post" action="https://vendors.bmtmicro.com/servlets/System.EMailTemplate" onsubmit="return process (form1);" style="margin-bottom: 0;">
+                <form name="form1" method="post" action="https://customers.bmtmicro.com/servlets/System.EMailTemplate" style="margin-bottom: 0;">
                   <input type="hidden" name="RECIPIENT" value="mdaemon@bmtmicro.com" />
                   <input type="hidden" name="SUBJECT" value="BMT Micro Customer Support Request" />
                   <input type="hidden" name="EMAILTEMPLATE" value="https://customers.bmtmicro.com/contactemail.txt" />
