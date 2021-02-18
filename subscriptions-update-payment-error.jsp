@@ -13,27 +13,10 @@
     <![endif]-->
     <%@ include file="/includes/favicon-meta.html" %>
     <title>BMT Micro Customers Center</title>
+    <link rel="stylesheet" href="https://customers.bmtmicro.com/css/addPages.css"/>
     <%@ include file="/includes/bootstrap_top_script.html" %>
     <%@ include file="/includes/style_menu_footer.html" %>
-    <link rel="stylesheet" href="https://customers.bmtmicro.com/css/table.css"/>
     <script src="https://secure.bmtmicro.com/Templates/util.js"></script>
-    <script src="https://customers.bmtmicro.com/js/TableSort.js"></script>
-    <script src="https://customers.bmtmicro.com/js/main.js"></script>
-    <script>
-      function cancelSubscription (subscriptionID, allowCancel) {
-        var form = document.subscriptions;
-        form.SUBSCRIPTIONID.value = subscriptionID;
-        form.NEXT_PAGE.value = allowCancel ? "https://customers.bmtmicro.com/cancel-success.jsp" : "https://customers.bmtmicro.com/request-success.jsp";
-        form.submit ();
-      }
-      function updatePayment (subscriptionID) {
-        var form = document.subscriptions;
-        form.ACTION.value = "2";
-        form.SUBSCRIPTIONID.value = subscriptionID;
-        form.NEXT_PAGE.value = "https://customers.bmtmicro.com/subscriptions-update-payment.jsp";
-        form.submit ();
-      }
-    </script>
   </head>
   <body>
     <!-- Blue background -->
@@ -46,18 +29,9 @@
           <div class="row justify-content-start">
             <jsp:include page="/includes/menuSidebar.jsp" />
             <div class="col-lg-10 col-md-12 page-title">
-              <h4>Subscription Purchases</h4>
-              <div class="content-box overflow-auto d-flex flex-column">
-                <div name="tableframe" id="tableframe" class="overflow-auto h-100">
-                  <c:catch var="errormsg">
-                    <c:import url="https://customers.bmtmicro.com/servlets/Customers.Subscriptions">
-                      <c:param name="SESSIONID" value="${sessionid}" />
-                      <c:param name="NEXT_PAGE" value="https://customers.bmtmicro.com/subscriptions-table.jsp"/>
-                      <c:param name="ERROR_PAGE" value="https://customers.bmtmicro.com/error-page.jsp"/>
-                    </c:import>
-                  </c:catch>
-                  <%@ include file="/includes/catch.jsp" %>
-                </div> <!-- /#tableframe -->
+              <h4>Error</h4>
+              <div class="content-box overflow-auto">
+                <p>The update was not successful. Please verify that the info is correct and try again. If the problem persists, please contact webmaster@bmtmicro.com</p>
               </div> <!-- /.content-box -->
             </div> <!-- /.col-lg-10 col-md-12 page-title -->
           </div> <!-- /.row justify-content-start -->
