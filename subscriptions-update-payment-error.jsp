@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=1600, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -30,9 +30,7 @@
             <jsp:include page="/includes/menuSidebar.jsp" />
             <div class="col-lg-10 col-md-12 page-title">
               <h4>Error</h4>
-              <div class="content-box overflow-auto">
-                <p>The update was not successful. Please verify that the info is correct and try again. If the problem persists, please contact webmaster@bmtmicro.com</p>
-              </div> <!-- /.content-box -->
+              <p>The update was not successful. Please verify that the info is correct and try again. If the problem persists, please contact <a href="mailto:webmaster@bmtmicro.com">webmaster@bmtmicro.com</a>.</p>
             </div> <!-- /.col-lg-10 col-md-12 page-title -->
           </div> <!-- /.row justify-content-start -->
         </article>

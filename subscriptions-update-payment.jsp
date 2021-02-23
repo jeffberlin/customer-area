@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=1600, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -19,7 +19,7 @@
     <script src="https://secure.bmtmicro.com/Templates/util.js"></script>
     <script src="https://secure.bmtmicro.com/OrderScript/orderScript.js"></script>
     <script>
-      function updateCardInfo (form) {                 
+      function updateCardInfo (form) {
         if (verifyCreditCardInfo (form)) {
           form.submit ();
         }
@@ -105,9 +105,7 @@
                     <span>
                       <label>Security code:&nbsp;</label>
                       <input type="password" id="CVV" name="CVV" size="4" autocomplete="off" required style="margin-bottom: 1rem;" />
-                      <span class="note">
-                        <a href="javascript:window.open('https://secure.bmtmicro.com/resources/info/CVV.html', '_blank', 'toolbar=yes,location=yes,directories=yes,resizable=yes,scrollbars=yes'); replace=no" tabindex="-1">Where is the security code?</a>
-                      </span>
+                      <span class="note"><a href="javascript:window.open('https://secure.bmtmicro.com/resources/info/CVV.html', '_blank', 'toolbar=yes,location=yes,directories=yes,resizable=yes,scrollbars=yes'); replace=no" tabindex="-1">Where is the security code?</a></span>
                     </span>
                     <br>
                     <span>
@@ -115,9 +113,8 @@
                       <input type="text" id="ZIP" name="ZIP" size="5" maxlength="20" required style="margin-bottom: 1rem;" />
                     </span>
                     <br>
-                    <span>
-                      <button type="button" class="grey-btn" onclick="updateCardInfo (this.form);">Update</button>
-                    </span>
+                    <button type="button" class="grey-btn" onclick="updateCardInfo (this.form);">Update</button>
+                    <p style="font-size: .8rem; margin-top: .5rem; margin-bottom: 0;">*&nbsp;When updating your credit card, a temporary authorization for the would-be purchase amount will be placed on the card to verify the card's legitimacy. This authorization will be voided automatically by the system. You will not be charged until the actual renewal date of your subscription.</p>
                     <br>
                   </div>
                 </form>
