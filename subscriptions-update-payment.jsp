@@ -114,7 +114,7 @@
                     </span>
                     <br>
                     <button type="button" class="grey-btn" onclick="updateCardInfo (this.form);">Update</button>
-                    <p style="font-size: .8rem; margin-top: .5rem; margin-bottom: 0;">*&nbsp;When updating your credit card, a temporary authorization for the would-be purchase amount will be placed on the card to verify the card's legitimacy. This authorization will be voided automatically by the system. You will not be charged until the actual renewal date of your subscription.</p>
+                    <p style="font-size: .7rem; margin-top: .5rem; margin-bottom: 0;">*&nbsp;When updating your credit card, a temporary authorization for the would-be purchase amount will be placed on the card to verify the card's legitimacy. This authorization will be voided automatically by the system. You will not be charged until the actual renewal date of your subscription.</p>
                     <br>
                   </div>
                 </form>
